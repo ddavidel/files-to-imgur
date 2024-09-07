@@ -1,0 +1,5 @@
+defaultdb.ddevdb
+**/log_*.txt
+**/*.pyc
+testfile.txt
+.vscode/launch.json
