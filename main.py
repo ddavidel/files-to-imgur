@@ -15,13 +15,10 @@ db = DataBase(logger)
 filereader = FileReader(logger)
 filewriter = FileWriter(logger)
 
-if len(sys.argv) <= 1:
-    logger.log('No file specified.', status=logs.FATAL)
-    sys.exit()
-
-# Beginning here
 logger.log('Starting main process')
 try:
+    if len(sys.argv) <= 1:
+        raise ValueError('No file specified.')
     # Collect settings:
     calling_args = sys.argv[1:]
     filenames = []
@@ -54,7 +51,7 @@ try:
                 mode=color_mode,
             )
 except Exception as e:
-    logger.log('An error occurred while running.', status=logs.FATAL)
+    logger.log('An error occurred while running:', status=logs.FATAL)
     logger.log(f'{e}', status=logs.FATAL)
 finally:
     db.close()
