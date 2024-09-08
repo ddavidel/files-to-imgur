@@ -18,7 +18,7 @@ class FileReader():
         Opens passed file in 'rb' mode.
         Returns data as bytes
         """
-        print(f'Reading file {filename}... This could take a while')
+        # print(f'Reading file {filename}... This could take a while')
         self.logger.log(f'Reading file {filename}...')
         data = bytes()
         try:
@@ -35,6 +35,6 @@ class FileReader():
             print(f'An error occurred while reading {filename}. See {self.logger.logfile_name} for more')
             sys.exit()
 
-        print('Reading completed.')
-        self.logger.log(f'Reading file {filename} completed')
+        # print('Reading completed.')
+        self.logger.log(f'Reading of file {filename} completed')
         return data
