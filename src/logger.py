@@ -10,10 +10,10 @@ FATAL = -1
 
 
 STATUS_DICT = {
-    -1: '[FATAL]:',
-    1: '[INFO]:',
-    2: '[WARNING]:',
-    3: '[ERROR]:',
+    -1: '[FATAL]',
+    1: '[INFO]',
+    2: '[WARNING]',
+    3: '[ERROR]',
 }
 
 
@@ -39,7 +39,13 @@ class Logger():
         """
         Writes passed message into current log file
         """
-        self.logfile.write(f'{STATUS_DICT.get(status)} {message}\n')
+        self.logfile.write(
+            '[{}]{}: {}\n'.format(
+                datetime.now(),
+                STATUS_DICT.get(status),
+                message,
+            )
+        )
         self._post_write()
 
     def close(self) -> None:
