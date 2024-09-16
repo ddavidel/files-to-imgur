@@ -32,8 +32,10 @@ class FileReader():
                         break
         except Exception as e:
             self.logger.log(f'Fatal error while reading file {filename}: {e}', status=logs.FATAL)
-            print(f'An error occurred while reading {filename}. See {self.logger.logfile_name} for more')
-            sys.exit()
+            print('An error occurred while reading {}. See {} for more'.format(
+                filename,
+                self.logger.logfile_name,
+            ))
 
         # print('Reading completed.')
         self.logger.log(f'Reading of file {filename} completed')
