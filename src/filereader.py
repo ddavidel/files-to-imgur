@@ -1,7 +1,6 @@
 """
 File reading module
 """
-import sys
 import src.logger as logs
 
 class FileReader():
