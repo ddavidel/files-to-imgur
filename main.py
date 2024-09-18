@@ -4,10 +4,10 @@ Using Imgur as free cloud storage
 import sys
 from alive_progress import alive_bar
 
-import src.logger as logs
-from src.database import DataBase
-from src.filereader import FileReader
-from src.imagewriter import FileWriter
+import modules.logger as logs
+from modules.database import DataBase
+from modules.filereader import FileReader
+from modules.imagewriter import FileWriter
 
 
 logger = logs.Logger()
